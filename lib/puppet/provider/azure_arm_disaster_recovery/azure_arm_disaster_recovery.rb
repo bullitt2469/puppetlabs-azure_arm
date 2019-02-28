@@ -305,7 +305,7 @@ Puppet::Type.type(:azure_arm_disaster_recovery).provide(:arm) do
     @client_id = ENV["azure_client_id"]
     @client_secret = ENV["azure_client_secret"]
     @tenant_id = ENV["azure_tenant_id"]
-    uri = URI("https://login.login.microsoftonline.us/#{@tenant_id}/oauth2/token")
+    uri = URI("https://login.microsoftonline.us/#{@tenant_id}/oauth2/token")
     response = Net::HTTP.post_form(uri,
                                    "grant_type" => "client_credentials",
                                    "client_id" => @client_id,
